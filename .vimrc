@@ -70,27 +70,6 @@ noremap <leader>0 :tablast<cr>
 " noremap <leader>wL <C-W>K
 " noremap <leader>wÖ <C-W>L
 
-" duplicate line and move cursor down
-" noremap <leader>d yyp
-
-"goto definition/symbol and go back
-" noremap <leader>g <C-]>
-" noremap <leader>b <C-o>
-
-" sane movement
-" noremap j h
-" noremap J H
-" noremap k j
-" noremap K J
-" noremap l k
-" noremap L K
-" noremap ö l
-" noremap Ö L
-
-" move to top and bottom of screen
-"noremap K L
-"noremap L H
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -140,41 +119,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" solarized color schema
-" syntax enable
-" set background=light
-" colorscheme solarized
-
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" " To ignore plugin indent changes, instead use:
-" "filetype plugin on
-" "
-" " Brief help
-" " :PluginList       - lists configured plugins
-" " :PluginInstall    - installs plugins; append `!` to update or just
-" :PluginUpdate
-" " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" " :PluginClean      - confirms removal of unused plugins; append `!` to
-" auto-approve removal
-" "
-" " see :h vundle for more details or wiki for FAQ
-" " Put your non-Plugin stuff after this line
 
-
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2008 Dec 17
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
-" When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
 endif
@@ -264,4 +212,4 @@ function! NumberToggle()
   endif
 endfunc
 
-nnoremap <C-n> :call NumberToggle()<cr>
+nnoremap <leader>n :call NumberToggle()<cr>
