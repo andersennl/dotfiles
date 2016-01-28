@@ -59,12 +59,15 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
+" hide search highlighting
+noremap <leader>h :noh<cr>
+
 " window management
 " noremap <leader>wj <C-W>h
 " noremap <leader>wk <C-W>j
 " noremap <leader>wl <C-W>k
 " noremap <leader>wö <C-W>l
-" 
+"
 " noremap <leader>wJ <C-W>H
 " noremap <leader>wK <C-W>J
 " noremap <leader>wL <C-W>K
@@ -102,12 +105,16 @@ let g:vimrubocop_config = '~/Projects/mynewsdesk/.rubocop.yml'
 let g:vimrubocop_keymap = 0
 nmap <Leader>r :RuboCop<CR>
 
-" Powerline
+" Airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 set ttimeoutlen=50
 set guifont=Source\ Code\ Pro\ for\ Powerline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let AirlineTheme='solarized'
+let &t_Co=256
 
 " Syntastic
 set statusline+=%#warningmsg#
