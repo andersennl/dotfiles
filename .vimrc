@@ -90,8 +90,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'Bling/vim-airline'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'altercation/vim-colors-solarized'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'airblade/vim-gitgutter'
@@ -100,11 +99,14 @@ Plugin 'mileszs/ack.vim'
 Plugin 'bbatsov/rubocop'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'mitsuhiko/flask'
-Plugin 'danro/rename.vim'
+Plugin 'tpope/vim-eunuch' " remove, rename etc
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-endwise'
 Plugin 'thoughtbot/vim-rspec'
+
+" ctags plugin
+Plugin 'craigemery/vim-autotag'
 
 " Rubocop
 let g:vimrubocop_config = '~/Projects/mynewsdesk/.rubocop.yml'
