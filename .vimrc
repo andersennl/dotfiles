@@ -122,7 +122,13 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 let AirlineTheme='solarized'
-let &t_Co=256
+let g:solarized_termcolors=256
+let &t_Co=256 "fix airline background colors
+
+" Vim colors
+" syntax enable
+" set background=dark
+" colorscheme solarized
 
 " Syntastic
 set statusline+=%#warningmsg#
