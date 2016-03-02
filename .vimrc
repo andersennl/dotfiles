@@ -104,6 +104,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-endwise'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'junegunn/gv.vim'
 
 " ctags plugin
 Plugin 'craigemery/vim-autotag'
@@ -210,9 +211,7 @@ if has("autocmd")
     \ endif
 
   augroup END
-
 else
-
   set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
