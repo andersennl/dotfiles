@@ -3,6 +3,7 @@ set nocompatible
 
 " show line numbers
 set number
+set numberwidth=5
 
 " enable copying to osx
 set clipboard=unnamed
@@ -14,15 +15,47 @@ set clipboard=unnamed
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+set shiftround
+
+" open new split panes to the right and bottom
+set splitbelow
+set splitright
+
+" quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Use one space, not two, after punctuation.
+set nojoinspaces
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
 
 " map leaderkey to space
 let mapleader = "\<Space>"
-"
+
+" switch between the last two files
+nmap <leader><leader> <c-^>
+
+" rails bindings
+nmap <leader>rm :Rmodel
+nmap <leader>rg :e Gemfile
+" nmap <leader>
+
+" buffer bindings
+nmap <leader>bn :bn<cr>
+nmap <leader>bp :bp<cr>
+nmap <leader>bd :bd<cr>
+
 " reload vim config without leaving vim
-nnoremap <leader>rv :source $MYVIMRC<CR>
+nnoremap <leader>vr :source $MYVIMRC<CR>
 
 " map leader-d to goto definition
 nmap <leader>d <C-]>
+
+" go back
 nmap <leader>o <C-o>
 
 " map leader-f to recently opened files
@@ -45,6 +78,14 @@ noremap <leader>t :NERDTreeToggle<cr>
 " find current file in tree
 noremap <leader>a :NERDTreeFind<cr>
 
+" run ruby code in buffer
+nmap <leader>rr :w<cr>:!ruby %<cr>
+
+" Rubocop
+let g:vimrubocop_config = '~/Projects/mynewsdesk/.rubocop.yml'
+let g:vimrubocop_keymap = 0
+nmap <Leader>rc :RuboCop<CR>
+
 " goto declaration
 noremap <leader>j <C-]>
 
@@ -55,33 +96,18 @@ noremap <leader>k <C-t>
 noremap , :
 
 " Go to tab by number
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 :tablast<cr>
-
-" hide search highlighting
-noremap <leader>h :noh<cr>
-
-" hide search highlight when pressing esc
-nnoremap <esc> :noh<return><esc>
-
-" window management
-" noremap <leader>wj <C-W>h
-" noremap <leader>wk <C-W>j
-" noremap <leader>wl <C-W>k
-" noremap <leader>wö <C-W>l
-"
-" noremap <leader>wJ <C-W>H
-" noremap <leader>wK <C-W>J
-" noremap <leader>wL <C-W>K
-" noremap <leader>wÖ <C-W>L
+nmap <leader>1 1gt
+nmap <leader>2 2gt
+nmap <leader>3 3gt
+nmap <leader>4 4gt
+nmap <leader>5 5gt
+nmap <leader>6 6gt
+nmap <leader>7 7gt
+nmap <leader>8 8gt
+nmap <leader>9 9gt
+nmap <leader>0 :tablast<cr>
+nmap <leader>h :noh<cr> " hide search highlighting
+nnoremap <C-c> :noh<return><esc> " hide search highlight when pressing esc
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -105,7 +131,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'mileszs/ack.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'bbatsov/rubocop'
 Plugin 'ngmy/vim-rubocop'
@@ -119,11 +144,6 @@ Plugin 'junegunn/gv.vim'
 
 " ctags plugin
 Plugin 'craigemery/vim-autotag'
-
-" Rubocop
-let g:vimrubocop_config = '~/Projects/mynewsdesk/.rubocop.yml'
-let g:vimrubocop_keymap = 0
-nmap <Leader>r :RuboCop<CR>
 
 " Airline
 set laststatus=2
@@ -168,6 +188,9 @@ set nocompatible
 set backspace=indent,eol,start
 
 set nobackup		" do not keep a backup file, use versions instead
+set nowritebackup
+set autowrite
+set noswapfile
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
