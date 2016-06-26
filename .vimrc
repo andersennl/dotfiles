@@ -21,6 +21,13 @@ let mapleader = "\<Space>"
 " reload vim config without leaving vim
 nnoremap <leader>rv :source $MYVIMRC<CR>
 
+" map leader-d to goto definition
+nmap <leader>d <C-]>
+nmap <leader>o <C-o>
+
+" map leader-f to recently opened files
+map <leader>f :MRU<CR>
+
 " save file with leader w
 noremap <leader>c :close<cr>
 noremap <leader>w :close<cr>
@@ -62,6 +69,9 @@ noremap <leader>0 :tablast<cr>
 " hide search highlighting
 noremap <leader>h :noh<cr>
 
+" hide search highlight when pressing esc
+nnoremap <esc> :noh<return><esc>
+
 " window management
 " noremap <leader>wj <C-W>h
 " noremap <leader>wk <C-W>j
@@ -82,6 +92,7 @@ call vundle#begin()
 " " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/mru.vim'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
@@ -133,7 +144,7 @@ let &t_Co=256 "fix airline background colors
 
 " Syntastic
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{SyntasticStatuslineFlag()}:@
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
@@ -161,6 +172,8 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
+set wildmenu
+filetype indent on
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
