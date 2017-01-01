@@ -5,7 +5,7 @@ set nocompatible
 set number
 set numberwidth=5
 
-" enable copying to osx
+" osx clipboard
 set clipboard=unnamed
 
 " allow mouse
